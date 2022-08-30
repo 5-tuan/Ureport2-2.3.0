@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="djpf.master.ureport2.ureport.mapper.ReportMapper">
+
+	<resultMap type="djpf.master.ureport2.ureport.entity.ReportEntity" id="ureportFile">
+		<id column="F_Id" jdbcType="VARCHAR" property="id"/>
+		<result column="F_CategoryId" jdbcType="VARCHAR" property="categoryId"/>
+		<result column="F_FullName" jdbcType="VARCHAR" property="fullName"/>
+		<result column="F_Content" jdbcType="VARCHAR" property="content"/>
+		<result column="F_EnCode" jdbcType="VARCHAR" property="enCode"/>
+		<result column="F_SortCode" jdbcType="LONGVARCHAR" property="sortCode"/>
+		<result column="F_EnabledMark" jdbcType="INTEGER" property="enabledMark"/>
+		<result column="F_Description" jdbcType="VARCHAR" property="description"/>
+		<result column="F_CreatorTime" jdbcType="DATE" property="creatorTime"/>
+		<result column="F_CreatorUserId" jdbcType="VARCHAR" property="creatorUser"/>
+		<result column="F_LastModifyTime" jdbcType="DATE" property="lastModifyTime"/>
+		<result column="F_LastModifyUserId" jdbcType="VARCHAR" property="lastModifyUser"/>
+		<result column="F_DeleteMark" jdbcType="INTEGER" property="deleteMark"/>
+		<result column="F_DeleteTime" jdbcType="VARCHAR" property="deleteTime"/>
+		<result column="F_DeleteUserId" jdbcType="VARCHAR" property="deleteUserId"/>
+	</resultMap>
+
+	<select id="queryReportList" resultMap="ureportFile">
+		select * from data_report
+	</select>
+
+</mapper> 

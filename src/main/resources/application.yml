@@ -1,0 +1,72 @@
+# Server settings  
+server:  
+    port: 16888
+#    port: 16777
+
+spring:
+  datasource:
+#     url: jdbc:mysql://127.0.0.1:3306/djpf_jzt?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+     url: jdbc:mysql://81.70.210.113:3306/djpf_jzt?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+     username: root
+     password: kDP2248tJpCxHkmp
+     driver-class-name: com.mysql.jdbc.Driver
+     # 连接池配置
+     druid:
+         max-active: 10 # 最大活跃数量 默认8
+         min-idle:  2 # 最小空闲数 默认0
+         initial-size: 5 # 初始连接数
+         max-wait: 60000 # 获取连接最大等待时间 默认 -1
+         validation-query: select 1
+         validation-query-timeout: 60000
+         time-between-eviction-runs-millis: 2000 # 间隔多久进行检测需要关闭的空闲连接
+         min-evictable-idle-time-millis: 600000 # 配置连接在池中最小生存的时间
+         max-wait-thread-count: 20 # 最大等待线程数
+#  mvc:
+#    view:
+#      prefix: /
+#      suffix: .jsp
+
+# MyBatis  
+mybatis:
+    typeAliasesPackage: djpf.master.ureport2.ureport.entity
+    mapperLocations: classpath:**/mapper/*.xml
+
+
+# 日志配置
+logging:
+  level:
+    root: info
+  file:
+    path: /log
+# ureport Mysql 存储
+
+ureport.mysql.provider:
+  prefix: djpf_
+  disabled: false
+
+
+# FTP 配置
+ftp:
+ factory:
+#   不启用ftp
+  enable: false
+  hostname: 192.168.56.1
+  port: 21
+  username: Administrator
+  password: Liqiaolin
+  client-timeout: 10000
+  encoding: utf8
+#  retry-times: 
+#  passive-mode: 
+#  file-type: 
+#  rename-uploaded: true
+#  enable: true
+
+# ureport FTP 存储
+  ftp:
+    provider:
+      prefix: ftp-
+      disabled: false
+      basePath: ureport_file\
+
+ 
